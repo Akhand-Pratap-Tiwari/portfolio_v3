@@ -17,8 +17,8 @@ class HeighLight extends StatelessWidget {
     return Row(
       children: [
         counter,
-        SizedBox(width: defaultPadding / 2),
-        Text(label!, style: Theme.of(context).textTheme.subtitle2),
+        const SizedBox(width: defaultPadding / 2),
+        Text(label!, style: Theme.of(context).textTheme.titleSmall),
       ],
     );
   }
