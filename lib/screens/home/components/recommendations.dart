@@ -25,11 +25,11 @@ class Recommendations extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List.generate(
-                demo_recommendations.length,
+                demoRecommendations.length,
                 (index) => Padding(
                   padding: const EdgeInsets.only(right: defaultPadding),
                   child: RecommendationCard(
-                    recommendation: demo_recommendations[index],
+                    recommendation: demoRecommendations[index],
                   ),
                 ),
               ),
