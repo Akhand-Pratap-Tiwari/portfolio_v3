@@ -1,3 +1,3 @@
 # portfolio_v3
 
-A new Flutter project.
+This is my portfolio that I made using Flutter.
