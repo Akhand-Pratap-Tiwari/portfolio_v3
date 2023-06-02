@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -5,7 +7,6 @@ import '../../responsive.dart';
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
-  
   const MainScreen({Key? key, required this.children}) : super(key: key);
   final List<Widget> children;
 
@@ -26,7 +27,10 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
             ),
-      drawer: const SideMenu(),
+      drawer: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+        child: const SideMenu(),
+      ),
       body: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: maxWidth),

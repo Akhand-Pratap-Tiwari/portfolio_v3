@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../constants.dart';
 import 'area_info_text.dart';
 import 'coding.dart';
@@ -58,7 +57,10 @@ class SideMenu extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(width: defaultPadding / 2),
-                            SvgPicture.asset("assets/icons/download.svg")
+                            IconButton(
+                            onPressed: () {},
+                            icon: const FaIcon(FontAwesomeIcons.download),
+                          ),
                           ],
                         ),
                       ),
@@ -71,15 +73,19 @@ class SideMenu extends StatelessWidget {
                           const Spacer(),
                           IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset("assets/icons/linkedin.svg"),
+                            icon: const FaIcon(FontAwesomeIcons.linkedin), 
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset("assets/icons/github.svg"),
+                            icon: const FaIcon(FontAwesomeIcons.github),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset("assets/icons/twitter.svg"),
+                            icon: const FaIcon(FontAwesomeIcons.youtube),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const FaIcon(FontAwesomeIcons.instagram),
                           ),
                           const Spacer(),
                         ],

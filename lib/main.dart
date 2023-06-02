@@ -26,7 +26,7 @@ class MainApp extends StatelessWidget {
               bodyMedium: const TextStyle(color: bodyTextColor),
             ),
       ),
-      home: const HomeScreen(),
+      home: const SafeArea(child: HomeScreen()),
     );
   }
 }
