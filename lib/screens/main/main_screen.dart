@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../constants.dart';
 import '../../responsive.dart';
@@ -24,23 +22,23 @@ class MainScreen extends StatelessWidget {
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
                   },
-                  icon: Icon(Icons.menu),
+                  icon: const Icon(Icons.menu),
                 ),
               ),
             ),
-      drawer: SideMenu(),
+      drawer: const SideMenu(),
       body: Center(
         child: Container(
-          constraints: BoxConstraints(maxWidth: maxWidth),
+          constraints: const BoxConstraints(maxWidth: maxWidth),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (Responsive.isDesktop(context))
-                Expanded(
+                const Expanded(
                   flex: 2,
                   child: SideMenu(),
                 ),
-              SizedBox(width: defaultPadding),
+              const SizedBox(width: defaultPadding),
               Expanded(
                 flex: 7,
                 child: SingleChildScrollView(
