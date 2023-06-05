@@ -21,7 +21,10 @@ class HomeBanner extends StatelessWidget {
           //   "assets/images/bg.jpeg",
           //   fit: BoxFit.cover,
           // ),
-          // LottieBuilder.asset('assets/anims/bgTrain.json'),
+          LottieBuilder.asset(
+            'assets/anims/bgTrain.json',
+            fit: BoxFit.fitHeight,
+          ),
           Container(color: darkColor.withOpacity(0.66)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),

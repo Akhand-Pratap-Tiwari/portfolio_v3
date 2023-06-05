@@ -14,6 +14,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black.withOpacity(0.92),
         appBar: Responsive.isDesktop(context)
             ? null
             : AppBar(
