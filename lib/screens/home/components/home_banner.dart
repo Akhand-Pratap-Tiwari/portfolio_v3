@@ -21,11 +21,23 @@ class HomeBanner extends StatelessWidget {
           //   "assets/images/bg.jpeg",
           //   fit: BoxFit.cover,
           // ),
-          LottieBuilder.asset(
-            'assets/anims/bgTrain.json',
-            fit: BoxFit.fitHeight,
+          ClipRRect(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(defaultRadius),
+            ),
+            child: LottieBuilder.asset(
+              'assets/anims/bgTrain.json',
+              fit: BoxFit.fitHeight,
+            ),
           ),
-          Container(color: darkColor.withOpacity(0.66)),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(defaultRadius),
+              ),
+              color: darkColor.withOpacity(0.5),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
             child: Column(

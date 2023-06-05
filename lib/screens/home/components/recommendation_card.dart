@@ -15,7 +15,10 @@ class RecommendationCard extends StatelessWidget {
     return Container(
       width: 400,
       padding: const EdgeInsets.all(defaultPadding),
-      color: secondaryColor,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(defaultRadius),
+        color: secondaryColor,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
