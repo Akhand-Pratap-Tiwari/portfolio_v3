@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../constants.dart';
-import '../../../models/project.dart';
-import '../../../responsive.dart';
+import '../../univ_constants.dart';
+import '../../models/project.dart';
+import '../../responsive.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -35,15 +36,38 @@ class ProjectCard extends StatelessWidget {
             maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(height: 1.5),
+            // softWrap: true,
           ),
           const Spacer(),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              "Read More >>",
-              style: TextStyle(color: primaryColor),
-            ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              InkResponse(
+                onTap: () {},
+                child: const FaIcon(FontAwesomeIcons.github),
+              ),
+              const SizedBox(
+                height: 24,
+                child: VerticalDivider(
+                  color: Colors.white,
+                ),
+              ),
+              InkResponse(
+                onTap: () {},
+                child: const FaIcon(
+                  FontAwesomeIcons.circlePlay,
+                  color: Colors.cyan,
+                ),
+              ),
+            ],
           ),
+          // TextButton(
+          //   onPressed: () {},
+          //   child: const Text(
+          //     "Read More >>",
+          //     style: TextStyle(color: primaryColor),
+          //   ),
+          // ),
         ],
       ),
     );

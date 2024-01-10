@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../univ_constants.dart';
 
 class HeighLight extends StatelessWidget {
   const HeighLight({

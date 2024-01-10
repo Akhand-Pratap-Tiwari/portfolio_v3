@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'constants.dart';
-import 'screens/home/home_screen.dart';
+import 'home_screen/home_screen.dart';
+import 'univ_constants.dart';
 
 void main() {
   runApp(const MainApp());
@@ -16,6 +15,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: "Akhand's Portfolio",
       theme: ThemeData.dark().copyWith(
+        useMaterial3: true,
         primaryColor: primaryColor,
         scaffoldBackgroundColor: bgColor,
         canvasColor: bgColor,

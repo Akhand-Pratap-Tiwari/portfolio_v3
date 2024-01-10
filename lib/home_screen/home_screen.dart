@@ -1,14 +1,15 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import '../responsive.dart';
+import '../univ_constants.dart';
+import 'components/highlights.dart';
+import 'components/home_banner.dart';
+import 'components/my_projects.dart';
+import 'components/recommendations.dart';
+import 'components/side_menu/side_menu.dart';
 
-import '../../constants.dart';
-import '../../responsive.dart';
-import 'components/side_menu.dart';
-
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key, required this.children}) : super(key: key);
-  final List<Widget> children;
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,21 +40,29 @@ class MainScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (Responsive.isDesktop(context))
-                  const Expanded(
+                  Expanded(
                     flex: 2,
-                    child: SideMenu(),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(defaultRadius),
+                        child: const SideMenu(),
+                      ),
+                    ),
                   ),
                 // const SizedBox(width: defaultPadding),
-                Expanded(
+                const Expanded(
                   flex: 7,
                   child: Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: defaultPadding),
+                        EdgeInsets.symmetric(horizontal: defaultPadding),
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          ...children,
-                          // our footer
+                          HomeBanner(),
+                          HighLightsInfo(),
+                          MyProjects(),
+                          Recommendations(),
                         ],
                       ),
                     ),

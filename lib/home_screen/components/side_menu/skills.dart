@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../constants.dart';
 import '../../../univ_components/animated_progress_indicator.dart';
+import '../../../univ_constants.dart';
 
 class Skills extends StatelessWidget {
   const Skills({
@@ -20,8 +20,8 @@ class Skills extends StatelessWidget {
             style: Theme.of(context).textTheme.titleSmall,
           ),
         ),
-        Row(
-          children: const [
+        const Row(
+          children: [
             Expanded(
               child: AnimatedCircularProgressIndicator(
                 percentage: 0.8,

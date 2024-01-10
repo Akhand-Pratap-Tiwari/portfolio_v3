@@ -1,0 +1,114 @@
+{
+    "name": "Akhand Pratap Tiwari",
+    "age": 20,
+    "gender": "Male",
+    "projects": {
+        "name": {
+            "description": null,
+            "gitHubLink": null,
+            "vidLink": null,
+            "demoLink": null
+        }
+    },
+    "quickLinks": {
+        "linkedIn": "www.linkedin.com/in/akhand-pratap-tiwari-37621b22a",
+        "email": "akdevstudios100@gmail.com",
+        "phone": "+91 7309040494",
+        "gitHub": "https://github.com/Akhand-Pratap-Tiwari"
+    },
+    "intro": [
+        "My name is Akhand Pratap Tiwari. Currently I am Pursuing B.Tech. 3rd year (CSE) at VIT Bhopal. ",
+        "I am particularly interested in AI and how actual Mathematics works under the hood to make AI work. ",
+        "I also like to design and build UX/UI primarily for easier interation with AI models. I also like to make graphs (as in Maths using equations). ",
+        "For frontend I use Flutter. "
+    ],
+    "codingProfiles": {
+        "leetCode": "https://leetcode.com/Akhand-Pratap-Tiwari/",
+        "codingNinjas": "https://www.codingninjas.com/studio/profile/Letticonion"
+    },
+    "hobbies": [
+        "I love making Graphs and Art. ",
+        "I watch Anime. ",
+        "I also like to write stories. ",
+        "And most favourite, disassembling concepts, ideas and tech to see how they work. "
+    ],
+    "services": [
+        "Mathematical Analysis of Graphs",
+        "Cross platform development",
+        "Making and Deploying AI/ML models",
+        "Designing (in Figma) and implementing (in Flutter) UI and UX"
+    ],
+    "experiences": [
+        "Being Android Dev in Core Team at Google Developer Students Club: 9 Months",
+        "Member of Clean-Green Campus Team: At Present",
+        "Team lead for EPICS projects: At Present",
+        "Member of UX/UI design team of a new LINUX distro: At Present"
+    ],
+    "achievements": [
+        "Finalist of Geek for Geeks Rumble - DSA and coding competition",
+        "Semi-finalist of Code for good 2023 organized by JP Morgan Chase and Co.",
+        "Speaker at Flutter Forward and Flutter Forward Extended event at GDSC with 150+ attendees",
+        "Conducted a Guest Webinar with 200+ students joining",
+        "LeetCode 100 Days consistency Badge"
+    ],
+    "educations": {
+        "college": "VIT Bhopal, University",
+        "degree": "B. Tech.",
+        "stream": "Computer Science Engineering",
+        "CGPA": 9.3
+    },
+    "technicalSkills": [
+        "Flutter",
+        "GCP",
+        "AWS",
+        "Firebase",
+        "MongoDB",
+        "MySQL",
+        "C/C++",
+        "Dart",
+        "Python",
+        "JAVA",
+        "Flask",
+        "Figma",
+        "UX/UI",
+        "GitHub",
+        "AI",
+        "ML",
+        "DL",
+        "Transfer Learning",
+        "Computer Vision",
+        "Tensorflow",
+        "PyTorch",
+        "SciKit-Learn",
+        "Graphs"
+    ],
+    "certifications": {
+        "IBM": [
+            "IBM AI Engineering Specialization Professional Certificate",
+            "Machine Learning with Python (with Honors)",
+            "Introduction to Deep Learning & Neural Networks with Keras",
+            "Building Deep Learning Models with TensorFlow",
+            "Deep Neural Networks with PyTorch (with Honors)",
+            "Introduction to Computer Vision and Image Processing",
+            "AI Capstone Project with Deep Learning "
+        ],
+        "Unschool": [
+            "Artificial Intelligence"
+        ],
+        "VITYarthi": [
+            "Computer Vision"
+        ],
+        "AWS": [
+            "AWS Academy Graduate - AWS Cloud Foundations"
+        ],
+        "Google Cloud Skills Boost": [
+            "Create and Manage Cloud Resources",
+            "Google Cloud Fundamentals: Core Infrastructure",
+            "Essential Google Cloud Infrastructure: Foundation",
+            "Set Up and Configure a Cloud Environment in Google Cloud",
+            "Perform Foundational Infrastructure Tasks in Google Cloud",
+            "Getting Started with Google Kubernetes Engine",
+            "Essential Google Cloud Infrastructure: Core Services"
+        ]
+    }
+}

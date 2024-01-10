@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 
-import '../../../constants.dart';
-import '../../../responsive.dart';
-import '../../../univ_components/animated_counter.dart';
+import '../../univ_constants.dart';
+import '../../responsive.dart';
+import '../../univ_components/animated_counter.dart';
 import 'heigh_light.dart';
 
 class HighLightsInfo extends StatelessWidget {
@@ -16,11 +16,11 @@ class HighLightsInfo extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding),
       child: Responsive.isMobileLarge(context)
-          ? Column(
+          ? const Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     HeighLight(
                       counter: AnimatedCounter(
                         value: 119,
@@ -37,10 +37,10 @@ class HighLightsInfo extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: defaultPadding),
+                SizedBox(height: defaultPadding),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     HeighLight(
                       counter: AnimatedCounter(
                         value: 30,
@@ -59,9 +59,9 @@ class HighLightsInfo extends StatelessWidget {
                 ),
               ],
             )
-          : Row(
+          : const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 HeighLight(
                   counter: AnimatedCounter(
                     value: 119,

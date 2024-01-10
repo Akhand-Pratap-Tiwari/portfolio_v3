@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../univ_constants.dart';
 import '../../../univ_components/animated_progress_indicator.dart';
 
 class Coding extends StatelessWidget {
