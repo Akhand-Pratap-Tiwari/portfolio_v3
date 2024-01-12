@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'home_screen/home_screen.dart';
+import 'models/person.dart';
 import 'univ_constants.dart';
 
-void main() {
+import 'dart:async' show Future;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await loadPerson();
   runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       title: "Akhand's Portfolio",
       theme: ThemeData.dark().copyWith(

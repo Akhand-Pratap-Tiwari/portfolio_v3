@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../univ_constants.dart';
+import '../../../../univ_constants.dart';
 
 class Knowledges extends StatelessWidget {
   const Knowledges({

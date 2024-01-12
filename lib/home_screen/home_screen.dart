@@ -1,11 +1,12 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import '../responsive.dart';
 import '../univ_constants.dart';
-import 'components/highlights.dart';
-import 'components/home_banner.dart';
-import 'components/my_projects.dart';
-import 'components/recommendations.dart';
+import 'components/highlights/highlights.dart';
+import 'components/home_banner/home_banner.dart';
+import 'components/projects/my_projects.dart';
+import 'components/recommendations/recommendations.dart';
 import 'components/side_menu/side_menu.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -34,42 +35,53 @@ class HomeScreen extends StatelessWidget {
           child: const SideMenu(),
         ),
         body: Center(
-          child: Container(
-            constraints: const BoxConstraints(maxWidth: maxWidth),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                if (Responsive.isDesktop(context))
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(defaultRadius),
-                        child: const SideMenu(),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              LottieBuilder.asset(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                "assets/anims/bg3.json",
+                fit: BoxFit.cover,
+              ),
+              Container(
+                constraints: const BoxConstraints(maxWidth: maxWidth),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (Responsive.isDesktop(context))
+                      Expanded(
+                        flex: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(defaultRadius),
+                            child: const SideMenu(),
+                          ),
+                        ),
+                      ),
+                    // const SizedBox(width: defaultPadding),
+                    const Expanded(
+                      flex: 7,
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: defaultPadding),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              HomeBanner(),
+                              HighLightsInfo(),
+                              MyProjects(),
+                              Recommendations(),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                // const SizedBox(width: defaultPadding),
-                const Expanded(
-                  flex: 7,
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: defaultPadding),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          HomeBanner(),
-                          HighLightsInfo(),
-                          MyProjects(),
-                          Recommendations(),
-                        ],
-                      ),
-                    ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

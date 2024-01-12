@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../univ_constants.dart';
+import '../../../../univ_constants.dart';
 
 class AreaInfoText extends StatelessWidget {
   const AreaInfoText({
@@ -16,13 +16,14 @@ class AreaInfoText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: defaultPadding / 2),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title!,
             style: const TextStyle(color: Colors.white),
           ),
-          Text(text!),
+          Flexible(child: Text(text!,)),
         ],
       ),
     );

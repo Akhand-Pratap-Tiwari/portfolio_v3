@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../univ_constants.dart';
-import '../../../univ_components/animated_progress_indicator.dart';
+import '../../../../univ_constants.dart';
+import '../../../../univ_components/animated_progress_indicator.dart';
 
 class Coding extends StatelessWidget {
   const Coding({
@@ -22,15 +22,7 @@ class Coding extends StatelessWidget {
           ),
         ),
         const AnimatedLinearProgressIndicator(
-          percentage: 0.7,
-          label: "Dart",
-        ),
-        const AnimatedLinearProgressIndicator(
-          percentage: 0.68,
-          label: "Python",
-        ),
-        const AnimatedLinearProgressIndicator(
-          percentage: 0.9,
+          percentage: 0.85,
           label: "C/C++",
         ),
         const AnimatedLinearProgressIndicator(
@@ -38,8 +30,16 @@ class Coding extends StatelessWidget {
           label: "Python",
         ),
         const AnimatedLinearProgressIndicator(
-          percentage: 0.58,
-          label: "MySQL",
+          percentage: 0.7,
+          label: "Dart",
+        ),
+        const AnimatedLinearProgressIndicator(
+          percentage: 0.6,
+          label: "JAVA",
+        ),
+        const AnimatedLinearProgressIndicator(
+          percentage: 0.8,
+          label: "SQL",
         ),
       ],
     );

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../univ_constants.dart';
+import '../../../../univ_constants.dart';
 
-class HeighLight extends StatelessWidget {
-  const HeighLight({
+class HighLight extends StatelessWidget {
+  const HighLight({
     Key? key,
     required this.counter,
     this.label,
