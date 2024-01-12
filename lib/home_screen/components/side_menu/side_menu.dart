@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../univ_constants.dart';
 import 'components/area_info_text.dart';
 import 'components/coding.dart';
-import 'components/knowledges.dart';
 import 'components/my_info.dart';
 import 'components/skills.dart';
 

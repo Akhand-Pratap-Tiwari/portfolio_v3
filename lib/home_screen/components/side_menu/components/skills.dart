@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_v3/models/person.dart';
-import 'package:portfolio_v3/responsive.dart';
-import '../../../../univ_components/animated_progress_indicator.dart';
 import '../../../../univ_constants.dart';
 
 class Skills extends StatelessWidget {
@@ -14,7 +12,7 @@ class Skills extends StatelessWidget {
     final List<Widget> skillList = List.generate(
       person!.technicalSkills.length,
       (index) => Container(
-        padding: EdgeInsets.all(2),
+        padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(defaultRadius),
           color: Colors.black,
@@ -23,7 +21,7 @@ class Skills extends StatelessWidget {
           child: Text(
             person!.technicalSkills[index],
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
           ),
@@ -44,10 +42,10 @@ class Skills extends StatelessWidget {
         GridView.count(
           shrinkWrap: true,
           crossAxisCount: 3,
-          children: skillList,
           childAspectRatio: 1 / 0.6,
           mainAxisSpacing: defaultPadding / 3,
           crossAxisSpacing: defaultPadding / 3,
+          children: skillList,
         )
         // const Row(
         //   children: [

@@ -55,7 +55,7 @@ class HighLightsInfo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: widList1,
                 ),
-                SizedBox(height: defaultPadding),
+                const SizedBox(height: defaultPadding),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: widList2,

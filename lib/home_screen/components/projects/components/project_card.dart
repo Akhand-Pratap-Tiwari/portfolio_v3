@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:html' as html;
 import '../../../../univ_constants.dart';
 import '../../../../models/project.dart';
-import '../../../../responsive.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -66,7 +65,7 @@ class ProjectCard extends StatelessWidget {
                         onPressed: () {
                           html.window.open(project.gitHubLink!, 'new tab');
                         },
-                        icon: FaIcon(FontAwesomeIcons.github),
+                        icon: const FaIcon(FontAwesomeIcons.github),
                       ),
                       const SizedBox(
                         height: 24,
