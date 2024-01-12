@@ -13,15 +13,15 @@ class MyProjects extends StatelessWidget {
   Widget build(BuildContext context) {
     // Responsive
     // int count = MediaQuery.of(context).size.width ~/ (2*230);
-    //TODO: Remove debug here
-    String s = Responsive.isDesktop(context)
-        ? "Desktop"
-        : Responsive.isMobile(context)
-            ? "Mobile"
-            : Responsive.isMobileLarge(context)
-                ? "Large Mobile"
-                : "Tablet";
-    debugPrint("Debug Print: " + s);
+    //Remove debug here
+    // String s = Responsive.isDesktop(context)
+    //     ? "Desktop"
+    //     : Responsive.isMobile(context)
+    //         ? "Mobile"
+    //         : Responsive.isMobileLarge(context)
+    //             ? "Large Mobile"
+    //             : "Tablet";
+    // debugPrint("Debug Print: " + s);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

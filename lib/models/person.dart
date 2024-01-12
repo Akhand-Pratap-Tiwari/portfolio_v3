@@ -18,7 +18,7 @@ class Person {
   final List<dynamic> achievements;
   final Map<String, dynamic> education;
   final List<dynamic> technicalSkills;
-  final Map<String, dynamic> certifications;//Jjojo
+  final Map<String, dynamic> certifications; //Jjojo
 
   Person({
     required this.name,
@@ -55,31 +55,8 @@ class Person {
   }
 
   void display() {
-    debugPrint(name.runtimeType.toString() +
-        "\n" +
-        age.runtimeType.toString() +
-        "\n" +
-        gender.runtimeType.toString() +
-        "\n" +
-        projects.runtimeType.toString() +
-        "\n" +
-        quickLinks.runtimeType.toString() +
-        "\n" +
-        intro.runtimeType.toString() +
-        "\n" +
-        hobbies.runtimeType.toString() +
-        "\n" +
-        expertise.runtimeType.toString() +
-        "\n" +
-        experiences.runtimeType.toString() +
-        "\n" +
-        achievements.runtimeType.toString() +
-        "\n" +
-        education.runtimeType.toString() +
-        "\n" +
-        technicalSkills.runtimeType.toString() +
-        "\n" +
-        certifications.runtimeType.toString());
+    debugPrint(
+        "${name.runtimeType}\n${age.runtimeType}\n${gender.runtimeType}\n${projects.runtimeType}\n${quickLinks.runtimeType}\n${intro.runtimeType}\n${hobbies.runtimeType}\n${expertise.runtimeType}\n${experiences.runtimeType}\n${achievements.runtimeType}\n${education.runtimeType}\n${technicalSkills.runtimeType}\n${certifications.runtimeType}");
   }
 }
 
@@ -92,4 +69,3 @@ Future<void> loadPerson() async {
   person = Person.fromJson(data);
   // person!.display();
 }
-
