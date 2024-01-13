@@ -13,6 +13,7 @@ dependencies:
   font_awesome_flutter: ^10.4.0
   google_fonts: ^4.0.4
   lottie: ^2.3.2
+  url_launcher: ^6.2.3
 
 dev_dependencies:
   flutter_test:

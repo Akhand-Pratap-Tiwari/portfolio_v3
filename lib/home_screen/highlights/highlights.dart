@@ -40,7 +40,7 @@ class HighLightsInfo extends StatelessWidget {
         value: 300,
         text: "+",
       ),
-      label: "LinkedIn Followers",
+      label: "LinkedIn",
     ),
   ];
 
@@ -48,7 +48,7 @@ class HighLightsInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-      child: Responsive.isMobileLarge(context)
+      child: Responsive.isMobileLarge(context) || Responsive.isMobile(context)
           ? Column(
               children: [
                 Row(

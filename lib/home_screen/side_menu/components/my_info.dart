@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../univ_components/deco_rotator.dart';
+
 class MyInfo extends StatelessWidget {
   const MyInfo({
     Key? key,
@@ -17,9 +19,19 @@ class MyInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const Spacer(flex: 2),
-            const CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage("assets/img/Photo4.jpg"),
+            const Stack(
+              alignment: Alignment.center,
+              children: [
+                SizedBox(
+                  height: 110,
+                  width: 110,
+                  child: DecoRotate(),
+                ),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/img/Photo4.jpg"),
+                ),
+              ],
             ),
             const Spacer(),
             Text(

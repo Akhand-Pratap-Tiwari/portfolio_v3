@@ -1,26 +1,48 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
 import '../responsive.dart';
 import '../univ_constants.dart';
-import 'components/highlights/highlights.dart';
-import 'components/home_banner/home_banner.dart';
-import 'components/projects/my_projects.dart';
-import 'components/recommendations/recommendations.dart';
-import 'components/side_menu/side_menu.dart';
+import './highlights/highlights.dart';
+import './home_banner/home_banner.dart';
+import './projects/my_projects.dart';
+import './side_menu/side_menu.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    String s = Responsive.isDesktop(context)
+        ? "Desktop"
+        : Responsive.isMobile(context)
+            ? "Mobile"
+            : Responsive.isMobileLarge(context)
+                ? "Mobile Large"
+                : "Tablet";
+    debugPrint("Debug Print: $s");
     return SafeArea(
       child: Scaffold(
+        floatingActionButton: Responsive.isMobile(context) || Responsive.isMobileLarge(context)
+            ? Padding(
+                padding: const EdgeInsets.all(defaultPadding - 8.0),
+                child: QuickLinksBar(
+                  vertical: false,
+                  bgColor: Colors.blue.shade900,
+                  separatorOn: true,
+                ),
+              )
+            : null,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        // extendBodyBehindAppBar: true,
         backgroundColor: Colors.black.withOpacity(0.92),
         appBar: Responsive.isDesktop(context)
             ? null
             : AppBar(
+                centerTitle: true,
                 backgroundColor: bgColor,
+                title: const Text("My Portfolio"),
                 leading: Builder(
                   builder: (context) => IconButton(
                     onPressed: () {
@@ -61,18 +83,20 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     // const SizedBox(width: defaultPadding),
-                    const Expanded(
+                    Expanded(
                       flex: 7,
                       child: Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: defaultPadding),
+                            const EdgeInsets.symmetric(horizontal: defaultPadding),
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
-                              HomeBanner(),
-                              HighLightsInfo(),
-                              MyProjects(),
-                              Recommendations(),
+                              Responsive.isMobile(context)
+                                  ? const SizedBox(height: 245, child: HomeBanner())
+                                  : const HomeBanner(),
+                              const HighLightsInfo(),
+                              const MyProjects(),
+                              // Recommendations(),
                             ],
                           ),
                         ),

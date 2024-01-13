@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
 import '../../../univ_constants.dart';
 import 'components/area_info_text.dart';
 import 'components/coding.dart';
@@ -61,32 +62,9 @@ class SideMenu extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(top: defaultPadding),
-                        color: const Color(0xFF24242E),
-                        child: Row(
-                          children: [
-                            const Spacer(),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const FaIcon(FontAwesomeIcons.linkedin),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const FaIcon(FontAwesomeIcons.github),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const FaIcon(FontAwesomeIcons.youtube),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const FaIcon(FontAwesomeIcons.instagram),
-                            ),
-                            const Spacer(),
-                          ],
-                        ),
-                      ),
+                      const SizedBox(height: defaultPadding),
+                      // QuickLinksHorizontal(),
+                      const QuickLinksBar(vertical: false, bgColor: Colors.black, separatorOn: false,),
                     ],
                   ),
                 ),

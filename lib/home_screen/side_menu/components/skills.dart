@@ -40,6 +40,7 @@ class Skills extends StatelessWidget {
           ),
         ),
         GridView.count(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           crossAxisCount: 3,
           childAspectRatio: 1 / 0.6,

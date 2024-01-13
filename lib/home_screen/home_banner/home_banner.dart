@@ -1,8 +1,8 @@
-import 'dart:ui';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
 
 import '../../../univ_constants.dart';
 import '../../../responsive.dart';
@@ -15,7 +15,13 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
+      aspectRatio: Responsive.isMobile(context)
+          ? 5 / 3
+          : Responsive.isTablet(context)
+              ? 3 / 1.1
+              : Responsive.isMobileLarge(context)
+                  ? 3 / 1.3
+                  : 3,
       child: Padding(
         padding: const EdgeInsets.only(top: 16.0),
         child: ClipRRect(
@@ -27,56 +33,78 @@ class HomeBanner extends StatelessWidget {
               children: [
                 LottieBuilder.asset(
                   'assets/anims/bg1.json',
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                   height: constraints.maxHeight,
                   width: constraints.maxWidth,
                 ),
-                BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
-                  child: Container(
-                    color: Colors.blue.withOpacity(0.1),
-                  ),
+                Container(
+                  color: Colors.deepPurpleAccent.withOpacity(0.5),
+                  child: Responsive.isTablet(context) ||
+                          Responsive.isDesktop(context)
+                      ? const Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(defaultPadding / 2),
+                              child: QuickLinksBar(
+                                vertical: true,
+                                bgColor: Colors.black,
+                                separatorOn: false,
+                              ),
+                            ),
+                          ],
+                        )
+                      : null,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+                  padding: const EdgeInsets.all(defaultPadding),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Discover my amazing \nArt Space!",
+                        "Discover my amazing\nArt Space!",
                         style: Responsive.isDesktop(context)
-                            ? Theme.of(context).textTheme.displaySmall!.copyWith(
+                            ? Theme.of(context)
+                                .textTheme
+                                .displaySmall!
+                                .copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 )
-                            : Theme.of(context).textTheme.headlineSmall!.copyWith(
+                            : Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
                       ),
-                      if (Responsive.isMobileLarge(context))
+                      if (!Responsive.isMobileLarge(context) &&
+                          !Responsive.isMobile(context))
                         const SizedBox(height: defaultPadding / 2),
                       const MyBuildAnimatedText(),
                       const SizedBox(height: defaultPadding),
-                      if (!Responsive.isMobileLarge(context))
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(defaultRadius / 2),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: defaultPadding * 2,
-                                vertical: defaultPadding),
-                            backgroundColor: primaryColor,
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(defaultRadius / 2),
                           ),
-                          child: const Text(
-                            "EXPLORE NOW",
-                            style: TextStyle(color: darkColor),
-                          ),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: defaultPadding * 2,
+                              vertical: defaultPadding),
+                          backgroundColor: primaryColor,
                         ),
+                        child: const Text(
+                          "EXPLORE NOW",
+                          style: TextStyle(color: darkColor),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      )
                     ],
                   ),
                 )
@@ -102,16 +130,20 @@ class MyBuildAnimatedText extends StatelessWidget {
       maxLines: 1,
       child: Row(
         children: [
-          if (!Responsive.isMobileLarge(context)) const FlutterCodedText(),
-          if (!Responsive.isMobileLarge(context))
+          if (!Responsive.isMobileLarge(context) &&
+              !Responsive.isMobile(context))
+            const FlutterCodedText(),
+          if (!Responsive.isMobileLarge(context) &&
+              !Responsive.isMobile(context))
             const SizedBox(width: defaultPadding / 2),
           const Text("I build "),
-          Responsive.isMobile(context)
-              ? const Expanded(child: AnimatedText())
-              : const AnimatedText(),
-          if (!Responsive.isMobileLarge(context))
+          const AnimatedText(),
+          if (!Responsive.isMobileLarge(context) &&
+              !Responsive.isMobile(context))
             const SizedBox(width: defaultPadding / 2),
-          if (!Responsive.isMobileLarge(context)) const FlutterCodedText(),
+          if (!Responsive.isMobileLarge(context) &&
+              !Responsive.isMobile(context))
+            const FlutterCodedText(),
         ],
       ),
     );

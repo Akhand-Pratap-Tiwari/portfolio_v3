@@ -1,12 +1,14 @@
 import 'person.dart';
 
 class Project {
-  final String? title, description, gitHubLink;
+  final String? title, description, gitHubLink, videoLink;
 
-  Project(
-      {required this.title,
-      required this.description,
-      required this.gitHubLink});
+  Project({
+    required this.title,
+    required this.description,
+    required this.gitHubLink,
+    required this.videoLink,
+  });
 }
 
 List<Project> projects = List.generate(
@@ -15,5 +17,6 @@ List<Project> projects = List.generate(
     title: person!.projects[index]["name"],
     description: person!.projects[index]["description"],
     gitHubLink: person!.projects[index]["gitHubLink"],
+    videoLink: person!.projects[index]["vidLink"]
   ),
 );
