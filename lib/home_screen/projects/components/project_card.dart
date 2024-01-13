@@ -2,10 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 // import 'dart:html' as html;
 import '../../../../univ_constants.dart';
 import '../../../../models/project.dart';
+import '../../../univ_components/launch_url_func.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -51,13 +51,6 @@ class ProjectCard extends StatelessWidget {
         );
       },
     );
-  }
-
-  Future<void> _launchUrl(String uri) async {
-    if (!await launchUrl(Uri.parse(uri))) {
-      debugPrint("Debug Print: " 'Could not launch $uri');
-      throw Exception('Could not launch $uri');
-    }
   }
 
   @override
@@ -106,7 +99,7 @@ class ProjectCard extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         IconButton(
-                          onPressed: () => _launchUrl(project.gitHubLink!),
+                          onPressed: () => launchMyUrl(project.gitHubLink!),
                           icon: const FaIcon(FontAwesomeIcons.github),
                         ),
                         if (project.videoLink != null)

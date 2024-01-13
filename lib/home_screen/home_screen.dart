@@ -96,6 +96,7 @@ class HomeScreen extends StatelessWidget {
                                   : const HomeBanner(),
                               const HighLightsInfo(),
                               const MyProjects(),
+                              const SizedBox(height: 16)
                               // Recommendations(),
                             ],
                           ),

@@ -1,56 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_v3/models/person.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../../univ_constants.dart';
+import 'launch_url_func.dart';
 
 class QuickLinksBar extends StatelessWidget {
   final bool vertical;
   final Color bgColor;
-final bool separatorOn;
-  const QuickLinksBar({this.bgColor = Colors.black, required this.vertical, this.separatorOn = false, super.key});
-  Future<void> _launchUrl(String uri) async {
-    if (!await launchUrl(Uri.parse(uri))) {
-      debugPrint("Debug Print: " 'Could not launch $uri');
-      throw Exception('Could not launch $uri');
-    }
-  }
+  final bool separatorOn;
+  const QuickLinksBar(
+      {this.bgColor = Colors.black,
+      required this.vertical,
+      this.separatorOn = false,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
     final Widget seperator = vertical
         ? const SizedBox(width: 20, child: Divider(color: Colors.white))
-        : const SizedBox(height: 20, child: VerticalDivider(color: Colors.white));
+        : const SizedBox(
+            height: 20, child: VerticalDivider(color: Colors.white));
     final List<Widget> buttonList = [
       const Spacer(),
       IconButton(
-        onPressed: () => _launchUrl(person!.quickLinks["linkedIn"]),
+        onPressed: () => launchMyUrl(person!.quickLinks["linkedIn"]),
         icon: const FaIcon(
           FontAwesomeIcons.linkedin,
           color: Colors.blue,
         ),
       ),
-      if(separatorOn) seperator,
+      if (separatorOn) seperator,
       IconButton(
-        onPressed: () => _launchUrl(person!.quickLinks["gitHub"]),
+        onPressed: () => launchMyUrl(person!.quickLinks["gitHub"]),
         icon: const FaIcon(FontAwesomeIcons.github),
       ),
-      if(separatorOn) seperator,
+      if (separatorOn) seperator,
       IconButton(
-        onPressed: () => _launchUrl(person!.quickLinks["youTube"]),
+        onPressed: () => launchMyUrl(person!.quickLinks["youTube"]),
         icon: const FaIcon(
           FontAwesomeIcons.youtube,
           color: Colors.red,
         ),
       ),
-      if(separatorOn) seperator,
+      if (separatorOn) seperator,
       IconButton(
-        onPressed: () => _launchUrl(person!.quickLinks["phone"]),
+        onPressed: () => launchMyUrl(person!.quickLinks["phone"]),
         icon: const FaIcon(Icons.phone),
       ),
-      if(separatorOn) seperator,
+      if (separatorOn) seperator,
       IconButton(
-        onPressed: () => _launchUrl(person!.quickLinks["email"]),
+        onPressed: () => launchMyUrl(person!.quickLinks["email"]),
         icon: const FaIcon(Icons.mail),
       ),
       // IconButton(

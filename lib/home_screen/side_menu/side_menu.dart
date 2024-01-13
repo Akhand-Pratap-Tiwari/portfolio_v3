@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_v3/models/person.dart';
+import 'package:portfolio_v3/univ_components/launch_url_func.dart';
 import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
 import '../../../univ_constants.dart';
 import 'components/area_info_text.dart';
@@ -55,7 +57,7 @@ class SideMenu extends StatelessWidget {
                               ),
                               const SizedBox(width: defaultPadding / 2),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () => launchMyUrl(person!.quickLinks["downloadResume"]),
                                 icon: const FaIcon(FontAwesomeIcons.download),
                               ),
                             ],
@@ -64,7 +66,11 @@ class SideMenu extends StatelessWidget {
                       ),
                       const SizedBox(height: defaultPadding),
                       // QuickLinksHorizontal(),
-                      const QuickLinksBar(vertical: false, bgColor: Colors.black, separatorOn: false,),
+                      const QuickLinksBar(
+                        vertical: false,
+                        bgColor: Colors.black,
+                        separatorOn: false,
+                      ),
                     ],
                   ),
                 ),

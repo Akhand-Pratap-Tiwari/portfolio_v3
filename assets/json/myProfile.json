@@ -53,13 +53,15 @@
         }
     ],
     "quickLinks": {
-        "linkedIn": "https://www.linkedin.com/in/akhand-pratap-tiwari-37621b22a",
+        "linkedIn": "https://www.linkedin.com/in/akhand-pratap-tiwari",
         "email": "mailto:akdevstudios100@gmail.com",
         "phone": "tel:+91 7309040494",
         "gitHub": "https://www.github.com/Akhand-Pratap-Tiwari",
         "leetCode": "https://www.leetcode.com/Akhand-Pratap-Tiwari/",
         "codingNinjas": "https://www.codingninjas.com/studio/profile/Letticonion",
-        "youTube": "https://www.youtube.com/@letticonionepic/featured"
+        "youTube": "https://www.youtube.com/@letticonionepic/featured",
+        "artSpace": "https://sites.google.com/view/akhand-art-space/home",
+        "downloadResume": "https://drive.usercontent.google.com/u/0/uc?id=16PdJQV8Y4l5WJlmm3iYl8UFGWhqxQcTv&export=download"
     },
     "intro": [
         "My name is Akhand Pratap Tiwari. Currently I am Pursuing B.Tech. 3rd year (CSE) at VIT Bhopal. ",

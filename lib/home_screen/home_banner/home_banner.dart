@@ -1,4 +1,3 @@
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -6,11 +5,11 @@ import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
 
 import '../../../univ_constants.dart';
 import '../../../responsive.dart';
+import '../../models/person.dart';
+import '../../univ_components/launch_url_func.dart';
 
 class HomeBanner extends StatelessWidget {
-  const HomeBanner({
-    Key? key,
-  }) : super(key: key);
+  const HomeBanner({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +85,7 @@ class HomeBanner extends StatelessWidget {
                       const MyBuildAnimatedText(),
                       const SizedBox(height: defaultPadding),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => launchMyUrl(person!.quickLinks["artSpace"]),
                         style: TextButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius:
