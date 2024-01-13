@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
+                          padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0, 16.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(defaultRadius),
                             child: const SideMenu(),

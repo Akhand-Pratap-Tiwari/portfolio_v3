@@ -12,7 +12,7 @@ class Skills extends StatelessWidget {
     final List<Widget> skillList = List.generate(
       person!.technicalSkills.length,
       (index) => Container(
-        padding: const EdgeInsets.all(2),
+        padding: const EdgeInsets.all(4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(defaultRadius),
           color: Colors.black,
