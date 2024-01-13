@@ -14,14 +14,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String s = Responsive.isDesktop(context)
-        ? "Desktop"
-        : Responsive.isMobile(context)
-            ? "Mobile"
-            : Responsive.isMobileLarge(context)
-                ? "Mobile Large"
-                : "Tablet";
-    debugPrint("Debug Print: $s");
+    // String s = Responsive.isDesktop(context)
+    //     ? "Desktop"
+    //     : Responsive.isMobile(context)
+    //         ? "Mobile"
+    //         : Responsive.isMobileLarge(context)
+    //             ? "Mobile Large"
+    //             : "Tablet";
+    // debugPrint("Debug Print: $s");
     return SafeArea(
       child: Scaffold(
         floatingActionButton: Responsive.isMobile(context) || Responsive.isMobileLarge(context)
