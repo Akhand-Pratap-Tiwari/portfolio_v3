@@ -41,29 +41,48 @@ class SideMenu extends StatelessWidget {
                       // const Knowledges(),
                       const Divider(),
                       const SizedBox(height: defaultPadding / 2),
-                      TextButton(
-                        onPressed: () {},
-                        child: FittedBox(
-                          child: Row(
-                            children: [
-                              Text(
-                                "DOWNLOAD CV",
-                                style: TextStyle(
-                                  color: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .color,
-                                ),
-                              ),
-                              const SizedBox(width: defaultPadding / 2),
-                              IconButton(
-                                onPressed: () => launchMyUrl(person!.quickLinks["downloadResume"]),
-                                icon: const FaIcon(FontAwesomeIcons.download),
-                              ),
-                            ],
+                      TextButton.icon(
+                        onPressed: () =>
+                            launchMyUrl(person!.quickLinks["downloadResume"]),
+                        icon: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: const FaIcon(FontAwesomeIcons.download),
+                        ),
+                        label: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "DOWNLOAD CV",
+                            style: TextStyle(
+                              // height: 5,
+                              fontSize: 15,
+                              color: Theme.of(context).textTheme.bodyLarge!.color,
+                            ),
                           ),
                         ),
                       ),
+                      // TextButton(
+                      //   onPressed: () => launchMyUrl(person!.quickLinks["downloadResume"]),
+                      //   child: FittedBox(
+                      //     child: Row(
+                      //       children: [
+                      //         Text(
+                      //           "DOWNLOAD CV",
+                      //           style: TextStyle(
+                      //             color: Theme.of(context)
+                      //                 .textTheme
+                      //                 .bodyLarge!
+                      //                 .color,
+                      //           ),
+                      //         ),
+                      //         const SizedBox(width: defaultPadding / 2),
+                      //         IconButton(
+                      //           onPressed: () => launchMyUrl(person!.quickLinks["downloadResume"]),
+                      //           icon: const FaIcon(FontAwesomeIcons.download),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
                       const SizedBox(height: defaultPadding),
                       // QuickLinksHorizontal(),
                       const QuickLinksBar(
