@@ -164,6 +164,7 @@ class AnimatedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedTextKit(
+      repeatForever: true,
         animatedTexts: List.generate(
       textList.length,
       (index) => TyperAnimatedText(

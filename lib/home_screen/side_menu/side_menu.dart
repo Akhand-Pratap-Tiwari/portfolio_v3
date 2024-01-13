@@ -44,9 +44,9 @@ class SideMenu extends StatelessWidget {
                       TextButton.icon(
                         onPressed: () =>
                             launchMyUrl(person!.quickLinks["downloadResume"]),
-                        icon: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: const FaIcon(FontAwesomeIcons.download),
+                        icon: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: FaIcon(FontAwesomeIcons.download),
                         ),
                         label: Padding(
                           padding: const EdgeInsets.all(8.0),
