@@ -154,11 +154,11 @@ class AnimatedText extends StatelessWidget {
     Key? key,
   }) : super(key: key);
   final textList = const [
-    "Flutter apps.",
+    "Flutter Apps.",
     "UX/UI.",
-    "AI/ML models.",
-    "apps on cloud.",
-    "backend."
+    "AI/ML Models.",
+    "Apps on Cloud.",
+    "Backend."
   ];
 
   @override
