@@ -99,8 +99,8 @@ class HomeScreen extends StatelessWidget {
                               const HighLightsInfo(),
                               const MyProjects(),
                               const SizedBox(height: 16),
-                              Certifications(),
-                              if(Responsive.isMobile(context)) SizedBox(height: defaultPadding*2) 
+                              const Certifications(),
+                              if(Responsive.isMobile(context)) const SizedBox(height: defaultPadding*2) 
                             ],
                           ),
                         ),

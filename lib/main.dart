@@ -17,9 +17,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //TODO: Remove debug Prints
-    //TODO: Add certifications
     //TODO: Add acievements
     //TODO: Add experiences
+    //TODO: Better Organization of code
+    //TODO: Add credly
+
     
     return MaterialApp(
       title: "Akhand's Portfolio",

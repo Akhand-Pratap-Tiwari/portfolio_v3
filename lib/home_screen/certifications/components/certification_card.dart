@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -23,7 +22,6 @@ class CertificationCard extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Opacity(
-            //TODO: Add credly
             opacity: 0.5,
             child: LottieBuilder.asset(
               "assets/anims/certBg.json",
@@ -49,11 +47,11 @@ class CertificationCard extends StatelessWidget {
                 ),
                 // const SizedBox(height: defaultPadding),
                 ...List.generate(
-                  certification.agency_certs!.length,
+                  certification.agencyCerts!.length,
                   (index) => AgencyAndCertificateList(
-                    agency: certification.agency_certs!.keys.toList()[index],
+                    agency: certification.agencyCerts!.keys.toList()[index],
                     certificateList:
-                        certification.agency_certs!.values.toList()[index],
+                        certification.agencyCerts!.values.toList()[index],
                   ),
                 )
               ],
@@ -89,8 +87,8 @@ class AgencyAndCertificateList extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Container(
         width: constraints.maxWidth,
-        padding: EdgeInsets.all(defaultPadding / 2),
-        margin: EdgeInsets.only(top: defaultPadding),
+        padding: const EdgeInsets.all(defaultPadding / 2),
+        margin: const EdgeInsets.only(top: defaultPadding),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(defaultRadius / 2),
           color: Colors.black,
@@ -101,7 +99,7 @@ class AgencyAndCertificateList extends StatelessWidget {
             // const SizedBox(height: defaultPadding),
             Text(
               agency,
-              style: TextStyle(color: Colors.cyanAccent),
+              style: const TextStyle(color: Colors.cyanAccent),
             ),
             const SizedBox(height: 5),
             // Divider(color: Colors.white54,),
