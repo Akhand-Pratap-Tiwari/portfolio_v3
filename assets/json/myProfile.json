@@ -61,7 +61,8 @@
         "codingNinjas": "https://www.codingninjas.com/studio/profile/Letticonion",
         "youTube": "https://www.youtube.com/@letticonionepic/featured",
         "artSpace": "https://sites.google.com/view/akhand-art-space/home",
-        "downloadResume": "https://drive.usercontent.google.com/u/0/uc?id=16PdJQV8Y4l5WJlmm3iYl8UFGWhqxQcTv&export=download"
+        "downloadResume": "https://drive.usercontent.google.com/u/0/uc?id=16PdJQV8Y4l5WJlmm3iYl8UFGWhqxQcTv&export=download",
+        "credly": "https://www.credly.com/users/akhand-pratap-tiwari.eebdfcfc"
     },
     "intro": [
         "My name is Akhand Pratap Tiwari. Currently I am Pursuing B.Tech. 3rd year (CSE) at VIT Bhopal. ",
@@ -123,32 +124,38 @@
         "Graphs"
     ],
     "certifications": {
-        "IBM": [
-            "IBM AI Engineering Specialization Professional Certificate",
-            "Machine Learning with Python (with Honors)",
-            "Introduction to Deep Learning & Neural Networks with Keras",
-            "Building Deep Learning Models with TensorFlow",
-            "Deep Neural Networks with PyTorch (with Honors)",
-            "Introduction to Computer Vision and Image Processing",
-            "AI Capstone Project with Deep Learning "
-        ],
-        "Unschool": [
-            "Artificial Intelligence"
-        ],
-        "VITYarthi": [
-            "Computer Vision"
-        ],
-        "AWS": [
-            "AWS Academy Graduate - AWS Cloud Foundations"
-        ],
-        "Google Cloud Skills Boost": [
-            "Create and Manage Cloud Resources",
-            "Google Cloud Fundamentals: Core Infrastructure",
-            "Essential Google Cloud Infrastructure: Foundation",
-            "Set Up and Configure a Cloud Environment in Google Cloud",
-            "Perform Foundational Infrastructure Tasks in Google Cloud",
-            "Getting Started with Google Kubernetes Engine",
-            "Essential Google Cloud Infrastructure: Core Services"
-        ]
+        "Artificial Intelligence and Machine Learning": {
+            "IBM": [
+                "• IBM AI Engineering Specialization Professional Certificate",
+                "• Machine Learning with Python (with Honors)",
+                "• Introduction to Deep Learning & Neural Networks with Keras",
+                "• Building Deep Learning Models with TensorFlow",
+                "• Deep Neural Networks with PyTorch (with Honors)",
+                "• Introduction to Computer Vision and Image Processing",
+                "• AI Capstone Project with Deep Learning "
+            ],
+            "Unschool": [
+                "Intro to Artificial Intelligence"
+            ],
+            "VITYarthi": [
+                "Computer Vision and Image Processing"
+            ]
+        },
+        "Cloud": {
+            "AWS": [
+                "• AWS Certified Solutions Architect - Associate",
+                "• AWS Academy Graduate - AWS Cloud Foundations",
+                "• AWS Certified Cloud Practitioner"
+            ],
+            "GCP": [
+                "• Create and Manage Cloud Resources",
+                "• Google Cloud Fundamentals: Core Infrastructure",
+                "• Essential Google Cloud Infrastructure: Foundation",
+                "• Set Up and Configure a Cloud Environment in Google Cloud",
+                "• Perform Foundational Infrastructure Tasks in Google Cloud",
+                "• Getting Started with Google Kubernetes Engine",
+                "• Essential Google Cloud Infrastructure: Core Services"
+            ]
+        }
     }
 }

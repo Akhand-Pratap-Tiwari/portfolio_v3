@@ -8,6 +8,7 @@ import './highlights/highlights.dart';
 import './home_banner/home_banner.dart';
 import './projects/my_projects.dart';
 import './side_menu/side_menu.dart';
+import 'certifications/certifications.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,7 +22,8 @@ class HomeScreen extends StatelessWidget {
     //         : Responsive.isMobileLarge(context)
     //             ? "Mobile Large"
     //             : "Tablet";
-    // debugPrint("Debug Print: $s");
+    // var w = MediaQuery.of(context).size.toString();
+    // debugPrint("Debug: $w");
     return SafeArea(
       child: Scaffold(
         floatingActionButton: Responsive.isMobile(context) || Responsive.isMobileLarge(context)
@@ -96,8 +98,9 @@ class HomeScreen extends StatelessWidget {
                                   : const HomeBanner(),
                               const HighLightsInfo(),
                               const MyProjects(),
-                              const SizedBox(height: 16)
-                              // Recommendations(),
+                              const SizedBox(height: 16),
+                              Certifications(),
+                              if(Responsive.isMobile(context)) SizedBox(height: defaultPadding*2) 
                             ],
                           ),
                         ),
