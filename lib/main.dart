@@ -16,14 +16,15 @@ class MainApp extends StatelessWidget {
   const MainApp({super.key});
   @override
   Widget build(BuildContext context) {
-    //TODO: Remove debug Prints
     //TODO: Add acievements
     //TODO: Add experiences
-    //TODO: Better Organization of code
     //TODO: Add Expertise
-    //TODO: Add Hobbies
     //TODO: Add my thoughts 
+    //TODO: Add Hobbies
+    //TODO: Add comments section
     //TODO: Add education
+    //TODO: Better Organization of code
+    //TODO: Remove debug Prints
 
     
     return MaterialApp(
