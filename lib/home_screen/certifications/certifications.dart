@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../univ_constants.dart';
 import '../../models/certification.dart';
 import 'components/certification_card.dart';
+import 'components/credly_button.dart';
 
 class Certifications extends StatelessWidget {
   const Certifications({
@@ -26,6 +27,8 @@ class Certifications extends StatelessWidget {
               "Certifications",
               style: Theme.of(context).textTheme.titleLarge,
             ),
+            const SizedBox(height: defaultPadding),
+            const CredlyButton(),
             const SizedBox(height: defaultPadding),
             FadingEdgeScrollView.fromSingleChildScrollView(
               child: SingleChildScrollView(

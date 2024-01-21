@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+// import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
 import '../responsive.dart';
@@ -26,16 +27,17 @@ class HomeScreen extends StatelessWidget {
     // debugPrint("Debug: $w");
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: Responsive.isMobile(context) || Responsive.isMobileLarge(context)
-            ? Padding(
-                padding: const EdgeInsets.all(defaultPadding - 8.0),
-                child: QuickLinksBar(
-                  vertical: false,
-                  bgColor: Colors.blue.shade900,
-                  separatorOn: true,
-                ),
-              )
-            : null,
+        floatingActionButton:
+            Responsive.isMobile(context) || Responsive.isMobileLarge(context)
+                ? Padding(
+                    padding: const EdgeInsets.all(defaultPadding - 8.0),
+                    child: QuickLinksBar(
+                      vertical: false,
+                      bgColor: Colors.blue.shade900,
+                      separatorOn: true,
+                    ),
+                  )
+                : null,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         // extendBodyBehindAppBar: true,
         backgroundColor: Colors.black.withOpacity(0.92),
@@ -77,7 +79,8 @@ class HomeScreen extends StatelessWidget {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0, 16.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(16.0, 16.0, 0, 16.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(defaultRadius),
                             child: const SideMenu(),
@@ -87,20 +90,23 @@ class HomeScreen extends StatelessWidget {
                     // const SizedBox(width: defaultPadding),
                     Expanded(
                       flex: 7,
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: defaultPadding),
-                        child: SingleChildScrollView(
+                      child: SingleChildScrollView(
+                        // controller: context.scrollController,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: defaultPadding),
                           child: Column(
                             children: [
                               Responsive.isMobile(context)
-                                  ? const SizedBox(height: 245, child: HomeBanner())
+                                  ? const SizedBox(
+                                      height: 245, child: HomeBanner())
                                   : const HomeBanner(),
                               const HighLightsInfo(),
                               const MyProjects(),
                               const SizedBox(height: 16),
                               const Certifications(),
-                              if(Responsive.isMobile(context)) const SizedBox(height: defaultPadding*2) 
+                              if (Responsive.isMobile(context))
+                                const SizedBox(height: defaultPadding * 2)
                             ],
                           ),
                         ),

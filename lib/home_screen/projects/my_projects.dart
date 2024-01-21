@@ -83,6 +83,8 @@ class ProjectsGridView extends StatelessWidget {
         projects.length,
         (index) => ProjectCard(
           // maxLines: maxLines,
+          index: index,
+          randomGrad: false,
           project: projects[index],
         ),
       ),

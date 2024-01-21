@@ -20,7 +20,10 @@ class MainApp extends StatelessWidget {
     //TODO: Add acievements
     //TODO: Add experiences
     //TODO: Better Organization of code
-    //TODO: Add credly
+    //TODO: Add Expertise
+    //TODO: Add Hobbies
+    //TODO: Add my thoughts 
+    //TODO: Add education
 
     
     return MaterialApp(
