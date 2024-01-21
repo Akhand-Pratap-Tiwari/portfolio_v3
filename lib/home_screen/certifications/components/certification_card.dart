@@ -1,8 +1,5 @@
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../../models/certification.dart';
 import '../../../../univ_constants.dart';
@@ -18,59 +15,35 @@ class CertificationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
       height: 450,
+      width: 400,
+      padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(defaultRadius),
         boxShadow: defaultBoxShadow,
-      ),
-      child: ClipRRect(
         borderRadius: BorderRadius.circular(defaultRadius),
-        child: Stack(
-          // fit: StackFit.,
-          alignment: Alignment.center,
-          children: [
-            ImageFiltered(
-              imageFilter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-              child: Opacity(
-                opacity: 0.5,
-                child: LottieBuilder.asset(
-                  "assets/anims/certBg.json",
-                  height: 450,
-                  width: 400,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Container(
-              height: 450,
-              width: 400,
-              padding: const EdgeInsets.all(defaultPadding),
-              // decoration: BoxDecoration(
-              //   borderRadius: BorderRadius.circular(defaultRadius),
-              //   // color: secondaryColor,
-              // ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    certification.field!,
-                    style: Theme.of(context).textTheme.titleSmall,
-                  ),
-                  // const SizedBox(height: defaultPadding),
-                  ...List.generate(
-                    certification.agencyCerts!.length,
-                    (index) => AgencyAndCertificateList(
-                      agency: certification.agencyCerts!.keys.toList()[index],
-                      certificateList:
-                          certification.agencyCerts!.values.toList()[index],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
+        gradient: LinearGradient(
+          colors: [Colors.deepPurpleAccent.withOpacity(0.3), Colors.teal.withOpacity(0.7)],
+          stops: const [0.35, 0.75],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            certification.field!,
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          ...List.generate(
+            certification.agencyCerts!.length,
+            (index) => AgencyAndCertificateList(
+              agency: certification.agencyCerts!.keys.toList()[index],
+              certificateList:
+                  certification.agencyCerts!.values.toList()[index],
+            ),
+          )
+        ],
       ),
     );
   }
