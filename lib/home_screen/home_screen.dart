@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 // import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
@@ -11,8 +12,31 @@ import './projects/my_projects.dart';
 import './side_menu/side_menu.dart';
 import 'certifications/certifications.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final ScrollController scrollController = ScrollController();
+  final ValueNotifier<double> listenable = ValueNotifier(0.0);
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      listenable.value = scrollController.offset;
+      // print(controller.offset); // <-- This is it.
+    });
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +88,7 @@ class HomeScreen extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              LottieBuilder.asset(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                "assets/anims/bg3.json",
-                fit: BoxFit.cover,
-              ),
+              ScrollingBg(listenable: listenable),
               Container(
                 constraints: const BoxConstraints(maxWidth: maxWidth),
                 child: Row(
@@ -91,6 +110,7 @@ class HomeScreen extends StatelessWidget {
                     Expanded(
                       flex: 7,
                       child: SingleChildScrollView(
+                        controller: scrollController,
                         // controller: context.scrollController,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
@@ -118,6 +138,64 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ScrollingBg extends StatefulWidget {
+  final ValueNotifier<double> listenable;
+
+  const ScrollingBg({required this.listenable, super.key});
+
+  @override
+  State<ScrollingBg> createState() => _ScrollingBgState();
+}
+
+class _ScrollingBgState extends State<ScrollingBg>
+    with TickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: widget.listenable,
+      builder: (context, child) {
+        // debugPrint("debug:" + widget.listenable.value.toString());
+        var size = MediaQuery.of(context).size;
+        return Transform.rotate(
+          angle: 0.01 * pi * widget.listenable.value/75,
+          child: Transform.translate(
+            offset: Offset(-350, -175 - 0.25 * widget.listenable.value),
+            child: child,
+          ),
+        );
+      },
+      child: LottieBuilder.asset(
+        controller: _controller,
+        onLoaded: (composition) {
+          _controller
+            ..duration = (composition.duration + Duration(seconds: 10))
+            ..repeat();
+        },
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        "assets/anims/bg3.json",
+        fit: BoxFit.cover,
       ),
     );
   }

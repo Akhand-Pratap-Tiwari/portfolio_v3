@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import '../../../models/certification.dart';
 import '../../../../univ_constants.dart';
 
@@ -19,7 +17,7 @@ class CertificationCard extends StatelessWidget {
       width: 400,
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        boxShadow: defaultBoxShadow,
+        // boxShadow: defaultBoxShadow,
         borderRadius: BorderRadius.circular(defaultRadius),
         gradient: LinearGradient(
           colors: [Colors.deepPurpleAccent.withOpacity(0.3), Colors.teal.withOpacity(0.7)],

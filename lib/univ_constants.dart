@@ -10,11 +10,11 @@ const defaultPadding = 20.0;
 const defaultDuration = Duration(seconds: 1); // we use it on our animation
 const maxWidth = 1440.0; // max width of our web
 const defaultRadius = 16.0;
-const defaultBoxShadow = [
+final defaultBoxShadow = [
   BoxShadow(
-    color: Colors.black54,
-    spreadRadius: 5,
-    blurRadius: 15,
+    color: Colors.white.withOpacity(0.2),
+    spreadRadius: 1,//5
+    blurRadius: 30,//15
     offset: Offset(0, 0),
   ),
 ];
