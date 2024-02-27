@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 : null,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         // extendBodyBehindAppBar: true,
-        backgroundColor: Colors.black.withOpacity(0.9),
+        backgroundColor: Colors.black.withOpacity(0.95),
         appBar: Responsive.isDesktop(context)
             ? null
             : AppBar(
@@ -189,7 +189,7 @@ class _ScrollingBgState extends State<ScrollingBg>
         controller: _controller,
         onLoaded: (composition) {
           _controller
-            ..duration = (composition.duration + Duration(seconds: 10))
+            ..duration = (composition.duration + const Duration(seconds: 10))
             ..repeat();
         },
         width: MediaQuery.of(context).size.width,

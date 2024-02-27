@@ -14,7 +14,7 @@ class CredlyButton extends StatefulWidget {
 }
 
 class _CredlyButtonState extends State<CredlyButton> {
-  List<BoxShadow>? boxShadow = null;
+  List<BoxShadow>? boxShadow;
 
   @override
   Widget build(BuildContext context) {
