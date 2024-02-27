@@ -176,9 +176,9 @@ class _ScrollingBgState extends State<ScrollingBg>
       animation: widget.listenable,
       builder: (context, child) {
         // debugPrint("debug:" + widget.listenable.value.toString());
-        var size = MediaQuery.of(context).size;
+        // var size = MediaQuery.of(context).size;
         return Transform.rotate(
-          angle: 0.01 * pi * widget.listenable.value/75,
+          angle: 0.01 * pi * widget.listenable.value / 75,
           child: Transform.translate(
             offset: Offset(-350, -175 - 0.25 * widget.listenable.value),
             child: child,

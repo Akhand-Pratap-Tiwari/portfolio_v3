@@ -75,33 +75,41 @@ class _ProjectCardState extends State<ProjectCard> {
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        boxShadow: isHovering ? defaultBoxShadow : null,
-                        borderRadius: BorderRadius.circular(defaultRadius),
-                        gradient: RadialGradient(
-                          focal: Alignment(pOffsetValue.dx, pOffsetValue.dy),
-                          colors: [
-                            Colors.cyanAccent,
-                            isHovering ? Colors.blue.withOpacity(0.3) : Colors.black
-                          ],
-                          stops: const [0.1, 1],
-                          center: Alignment(
-                              pOffsetValue.dx / 2.5, pOffsetValue.dy / 2.5),
-                        ),
-                      ),
-                      child: Container(
+                    if (isHovering)
+                      Container(
                         decoration: BoxDecoration(
+                          boxShadow: isHovering ? defaultBoxShadow : null,
                           borderRadius: BorderRadius.circular(defaultRadius),
                           gradient: RadialGradient(
                             focal: Alignment(pOffsetValue.dx, pOffsetValue.dy),
-                            colors: const [Colors.deepPurple, Colors.transparent],
-                            stops: const [0.01, 1],
-                            center: Alignment(pOffsetValue.dx, pOffsetValue.dy),
+                            colors: [
+                              Colors.cyanAccent,
+                              isHovering
+                                  ? Colors.blue.withOpacity(0.3)
+                                  : Colors.black
+                            ],
+                            stops: const [0.1, 1],
+                            center: Alignment(
+                                pOffsetValue.dx / 2.5, pOffsetValue.dy / 2.5),
+                          ),
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(defaultRadius),
+                            gradient: RadialGradient(
+                              focal:
+                                  Alignment(pOffsetValue.dx, pOffsetValue.dy),
+                              colors: const [
+                                Colors.deepPurple,
+                                Colors.transparent
+                              ],
+                              stops: const [0.01, 1],
+                              center:
+                                  Alignment(pOffsetValue.dx, pOffsetValue.dy),
+                            ),
                           ),
                         ),
                       ),
-                    ),
                     child!,
                   ],
                 ),
@@ -110,7 +118,7 @@ class _ProjectCardState extends State<ProjectCard> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(defaultRadius),
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: CardForeground(
                   project: widget.project,
                   descMaxLines: descMaxLines,
