@@ -12,7 +12,7 @@ const maxWidth = 1440.0; // max width of our web
 const defaultRadius = 16.0;
 final defaultBoxShadow = [
   BoxShadow(
-    color: Colors.white.withOpacity(0.2),
+    color: Colors.black,
     spreadRadius: 1,//5
     blurRadius: 30,//15
     offset: Offset(0, 0),

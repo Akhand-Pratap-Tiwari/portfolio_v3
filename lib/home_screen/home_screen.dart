@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 : null,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         // extendBodyBehindAppBar: true,
-        backgroundColor: Colors.black.withOpacity(0.92),
+        backgroundColor: Colors.black.withOpacity(0.9),
         appBar: Responsive.isDesktop(context)
             ? null
             : AppBar(
