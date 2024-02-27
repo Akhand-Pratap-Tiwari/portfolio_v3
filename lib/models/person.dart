@@ -54,10 +54,10 @@ class Person {
     );
   }
 
-  void display() {
-    debugPrint(
-        "${name.runtimeType}\n${age.runtimeType}\n${gender.runtimeType}\n${projects.runtimeType}\n${quickLinks.runtimeType}\n${intro.runtimeType}\n${hobbies.runtimeType}\n${expertise.runtimeType}\n${experiences.runtimeType}\n${achievements.runtimeType}\n${education.runtimeType}\n${technicalSkills.runtimeType}\n${certifications.runtimeType}");
-  }
+  // void display() {
+  //   debugPrint(
+  //       "${name.runtimeType}\n${age.runtimeType}\n${gender.runtimeType}\n${projects.runtimeType}\n${quickLinks.runtimeType}\n${intro.runtimeType}\n${hobbies.runtimeType}\n${expertise.runtimeType}\n${experiences.runtimeType}\n${achievements.runtimeType}\n${education.runtimeType}\n${technicalSkills.runtimeType}\n${certifications.runtimeType}");
+  // }
 }
 
 Person? person;
