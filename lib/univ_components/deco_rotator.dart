@@ -19,7 +19,7 @@ class _DecoRotateState extends State<DecoRotate> with TickerProviderStateMixin {
       /// [AnimationController]s can be created with `vsync: this` because of
       /// [TickerProviderStateMixin].
       vsync: this,
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 20),
     );
     controller.repeat(reverse: true);
     super.initState();
