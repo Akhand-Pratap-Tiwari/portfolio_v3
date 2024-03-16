@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 // import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
@@ -21,13 +22,20 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final ScrollController scrollController = ScrollController();
-  final ValueNotifier<double> listenable = ValueNotifier(0.0);
+  final ValueNotifier<double> listenableScrollOffset = ValueNotifier(0.0);
+  // final ValueNotifier<bool> listenableIsScrolling = ValueNotifier(false);
+  final ValueNotifier<ScrollDirection> listenableScrollDirection =
+      ValueNotifier(ScrollDirection.forward);
 
   @override
   void initState() {
     super.initState();
     scrollController.addListener(() {
-      listenable.value = scrollController.offset;
+      listenableScrollOffset.value = scrollController.offset;
+      // listenableIsScrolling.value =
+      // scrollController.position.isScrollingNotifier.value;
+      listenableScrollDirection.value =
+          scrollController.position.userScrollDirection;
       // print(controller.offset); // <-- This is it.
     });
   }
@@ -88,7 +96,11 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              ScrollingBg(listenable: listenable),
+              ScrollingBg(
+                listenableScrollOffset: listenableScrollOffset,
+                // listenableIsScrolling: listenableIsScrolling,
+                listenableScrollDirection: listenableScrollDirection,
+              ),
               Container(
                 constraints: const BoxConstraints(maxWidth: maxWidth),
                 child: Row(
@@ -111,6 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       flex: 7,
                       child: SingleChildScrollView(
                         controller: scrollController,
+                        // physics: const BouncingScrollPhysics(),
                         // controller: context.scrollController,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
@@ -144,9 +157,16 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class ScrollingBg extends StatefulWidget {
-  final ValueNotifier<double> listenable;
+  final ValueNotifier<double> listenableScrollOffset;
+  // final ValueNotifier<bool> listenableIsScrolling;
+  final ValueNotifier<ScrollDirection> listenableScrollDirection;
 
-  const ScrollingBg({required this.listenable, super.key});
+  const ScrollingBg({
+    required this.listenableScrollOffset,
+    // required this.listenableIsScrolling,
+    required this.listenableScrollDirection,
+    super.key,
+  });
 
   @override
   State<ScrollingBg> createState() => _ScrollingBgState();
@@ -172,31 +192,57 @@ class _ScrollingBgState extends State<ScrollingBg>
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return AnimatedBuilder(
-      animation: widget.listenable,
+      animation: widget.listenableScrollOffset,
       builder: (context, child) {
-        // debugPrint("debug:" + widget.listenable.value.toString());
-        // var size = MediaQuery.of(context).size;
-        return Transform.rotate(
-          angle: 0.01 * pi * widget.listenable.value / 75,
-          child: Transform.translate(
-            offset: Offset(-350, -175 - 0.25 * widget.listenable.value),
-            child: child,
-          ),
+        if (_controller.duration != null) {
+          if (widget.listenableScrollDirection.value ==
+              ScrollDirection.reverse) {
+            _controller.value += 0.005;
+            _controller.repeat();
+          } else {
+            _controller.value -= 0.005;
+            _controller.repeat();
+          }
+        }
+        return Stack(
+          alignment: Alignment.center,
+          children: [
+            // if (child != null) child,
+            Transform.translate(
+              offset: Offset(
+                Responsive.isMobile(context) ||
+                        Responsive.isMobileLarge(context)
+                    ? 0
+                    : 200,
+                Responsive.isDesktop(context) ? -200 : 0,
+              ),
+              child: LottieBuilder.asset(
+                frameRate: FrameRate.max,
+                controller: _controller,
+                onLoaded: (composition) {
+                  _controller
+                    ..duration =
+                        (composition.duration + const Duration(seconds: 15))
+                    ..repeat();
+                },
+                width: size.width,
+                height: size.height,
+                "assets/anims/bg3.json",
+                fit: BoxFit.cover,
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.pinkAccent.withOpacity(
+                    (sin(widget.listenableScrollOffset.value / 300).abs())),
+                backgroundBlendMode: BlendMode.color,
+              ),
+            ),
+          ],
         );
       },
-      child: LottieBuilder.asset(
-        controller: _controller,
-        onLoaded: (composition) {
-          _controller
-            ..duration = (composition.duration + const Duration(seconds: 10))
-            ..repeat();
-        },
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        "assets/anims/bg3.json",
-        fit: BoxFit.cover,
-      ),
     );
   }
 }
