@@ -191,7 +191,7 @@ class CardForeground extends StatelessWidget {
                   ),
                 if (project.videoLink != null)
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => launchMyUrl(project.videoLink!),
                     icon: const FaIcon(
                       FontAwesomeIcons.circlePlay,
                       color: Colors.cyan,

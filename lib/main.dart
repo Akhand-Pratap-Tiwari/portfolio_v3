@@ -45,3 +45,4 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+//flutter build web --web-renderer canvaskit
