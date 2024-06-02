@@ -93,13 +93,14 @@
         "Semi-finalist of Code for good 2023 organized by JP Morgan Chase and Co.",
         "Speaker at Flutter Forward and Flutter Forward Extended event at GDSC with 150+ attendees",
         "Conducted a Guest Webinar with 200+ students joining",
+        "1328 Global Rank in TCS Code Vita Global Coding Competition",
         "LeetCode 100 Days consistency Badge"
     ],
     "education": {
         "college": "VIT Bhopal, University",
         "degree": "B. Tech.",
         "stream": "Computer Science Engineering",
-        "CGPA": 9.3
+        "CGPA": 9.2
     },
     "technicalSkills": [
         "Flutter",
@@ -146,6 +147,9 @@
                 "• AWS Certified Solutions Architect - Associate",
                 "• AWS Academy Graduate - AWS Cloud Foundations",
                 "• AWS Certified Cloud Practitioner"
+            ],
+            "NPTEL": [
+                "• Cloud Computing"
             ],
             "GCP": [
                 "• Create and Manage Cloud Resources",
