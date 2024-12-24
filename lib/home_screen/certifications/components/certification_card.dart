@@ -17,7 +17,6 @@ class CertificationCard extends StatelessWidget {
       width: 400,
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        // boxShadow: defaultBoxShadow,
         borderRadius: BorderRadius.circular(defaultRadius),
         gradient: LinearGradient(
           colors: [
