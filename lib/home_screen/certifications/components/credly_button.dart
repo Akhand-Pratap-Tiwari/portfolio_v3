@@ -40,7 +40,7 @@ class _CredlyButtonState extends State<CredlyButton> {
           ),
           child: IconButton.outlined(
             style: ButtonStyle(
-              shape: MaterialStateProperty.all(
+              shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(defaultRadius),
                 ),
