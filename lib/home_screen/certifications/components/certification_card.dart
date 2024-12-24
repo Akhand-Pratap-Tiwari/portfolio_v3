@@ -20,28 +20,33 @@ class CertificationCard extends StatelessWidget {
         // boxShadow: defaultBoxShadow,
         borderRadius: BorderRadius.circular(defaultRadius),
         gradient: LinearGradient(
-          colors: [Colors.deepPurpleAccent.withOpacity(0.3), Colors.teal.withOpacity(0.7)],
+          colors: [
+            Colors.deepPurpleAccent.withOpacity(0.3),
+            Colors.teal.withOpacity(0.7)
+          ],
           stops: const [0.35, 0.75],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            certification.field!,
-            style: Theme.of(context).textTheme.titleSmall,
-          ),
-          ...List.generate(
-            certification.agencyCerts!.length,
-            (index) => AgencyAndCertificateList(
-              agency: certification.agencyCerts!.keys.toList()[index],
-              certificateList:
-                  certification.agencyCerts!.values.toList()[index],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              certification.field!,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
-          )
-        ],
+            ...List.generate(
+              certification.agencyCerts!.length,
+              (index) => AgencyAndCertificateList(
+                agency: certification.agencyCerts!.keys.toList()[index],
+                certificateList:
+                    certification.agencyCerts!.values.toList()[index],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -80,7 +85,6 @@ class AgencyAndCertificateList extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // const SizedBox(height: defaultPadding),
             Text(
               agency,
               style: const TextStyle(color: Colors.cyanAccent),
