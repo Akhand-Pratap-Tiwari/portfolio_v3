@@ -29,19 +29,18 @@ class MainApp extends StatelessWidget {
     
     return MaterialApp(
       title: "Akhand's Portfolio",
-      theme: ThemeData.dark().copyWith(
-        useMaterial3: true,
+      theme: ThemeData.light(useMaterial3: true).copyWith(
         primaryColor: primaryColor,
-        scaffoldBackgroundColor: bgColor,
-        canvasColor: bgColor,
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: Colors.white)
-            .copyWith(
-              bodyLarge: const TextStyle(color: bodyTextColor),
-              bodyMedium: const TextStyle(color: bodyTextColor),
-            ),
+        // scaffoldBackgroundColor: bgColor,
+        // canvasColor: bgColor,
+        // textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+        //     .apply(bodyColor: Colors.white)
+        //     .copyWith(
+        //       bodyLarge: const TextStyle(color: bodyTextColor),
+        //       bodyMedium: const TextStyle(color: bodyTextColor),
+        //     ),
       ),
-      home: const SafeArea(child: HomeScreen()),
+      home: const SafeArea(child: SelectionArea(child: HomeScreen())),
     );
   }
 }

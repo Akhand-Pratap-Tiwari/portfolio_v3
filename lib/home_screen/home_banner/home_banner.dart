@@ -1,6 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
 
 import '../../../univ_constants.dart';
@@ -30,12 +29,6 @@ class HomeBanner extends StatelessWidget {
               fit: StackFit.expand,
               alignment: Alignment.center,
               children: [
-                LottieBuilder.asset(
-                  'assets/anims/bg1.json',
-                  fit: BoxFit.cover,
-                  height: constraints.maxHeight,
-                  width: constraints.maxWidth,
-                ),
                 Container(
                   color: Colors.deepPurpleAccent.withOpacity(0.5),
                   child: Responsive.isTablet(context) ||

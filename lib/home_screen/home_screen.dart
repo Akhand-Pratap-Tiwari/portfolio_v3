@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 // import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
-import 'package:lottie/lottie.dart';
 import 'package:portfolio_v3/univ_components/quick_links_bar.dart';
 import '../responsive.dart';
 import '../univ_constants.dart';
@@ -72,12 +71,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 : null,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         // extendBodyBehindAppBar: true,
-        backgroundColor: Colors.black.withOpacity(0.95),
+        // backgroundColor: Colors.black.withOpacity(0.95),
         appBar: Responsive.isDesktop(context)
             ? null
             : AppBar(
                 centerTitle: true,
-                backgroundColor: bgColor,
+                // backgroundColor: bgColor,
                 title: const Text("My Portfolio"),
                 leading: Builder(
                   builder: (context) => IconButton(
@@ -192,7 +191,7 @@ class _ScrollingBgState extends State<ScrollingBg>
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     return AnimatedBuilder(
       animation: widget.listenableScrollOffset,
       builder: (context, child) {
@@ -209,30 +208,6 @@ class _ScrollingBgState extends State<ScrollingBg>
         return Stack(
           alignment: Alignment.center,
           children: [
-            // if (child != null) child,
-            Transform.translate(
-              offset: Offset(
-                Responsive.isMobile(context) ||
-                        Responsive.isMobileLarge(context)
-                    ? 0
-                    : 200,
-                Responsive.isDesktop(context) ? -200 : 0,
-              ),
-              child: LottieBuilder.asset(
-                frameRate: FrameRate.max,
-                controller: _controller,
-                onLoaded: (composition) {
-                  _controller
-                    ..duration =
-                        (composition.duration + const Duration(seconds: 15))
-                    ..repeat();
-                },
-                width: size.width,
-                height: size.height,
-                "assets/anims/bg3.json",
-                fit: BoxFit.cover,
-              ),
-            ),
             Container(
               decoration: BoxDecoration(
                 color: Colors.pinkAccent.withOpacity(
